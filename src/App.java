@@ -25,13 +25,13 @@ public class App {
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
         ///////// 1)
-        System.out.println("Inserisci un numero intero");
+       System.out.println("Inserisci un numero intero");
         int count = 0;
         int n = scan.nextInt();
         for(int i = 1; i <= n; i++){
             count+=i;
         }
-        System.out.println("La somma dei numeri fino a "+n+" è "+count);
+        System.out.println("La somma dei numeri da 0 fino a "+n+" è "+count);
         ////////// 2)
         System.out.println("Inserisci una stringa");
         String str = scan.next();
@@ -47,10 +47,23 @@ public class App {
         String[] parole = frase.split("\\s+");
         int numParole = parole.length;
         System.out.println("La frase è fatta di "+numParole+" parole");
+        /// oppure:
+        System.out.println("Oppure inserisci un'altra frase");
+        String frase2 = scan.nextLine();
+        char[] test = frase2.trim().toCharArray();
+        int counter = 0;
+        for(int i = 0; i < test.length; i++){
+            if(test[i] == ' '){
+                counter++;
+            }
+        }
+        System.out.println("La frase è fatta di "+(counter+1)+" parole");
+        /// 
         //////////// 4)
         System.out.println("Inserisci un numero intero");
         int num = scan.nextInt();
         Integer numInteger = Integer.valueOf(num);
         System.out.println("Il numero inserito è composto da "+numInteger.toString().length()+" cifre");
     }
+    
 }
